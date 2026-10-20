@@ -1,0 +1,26 @@
+# Whitelist: ignore EVERYTHING, then allow only the code. Data, PDFs, logs and keys can never be committed by accident.
+*
+!*/
+
+# code and docs
+!*.py
+!README.md
+!LICENSE
+!requirements.txt
+!requirements-dev.txt
+!.gitignore
+!.github/workflows/*.yml
+
+# never commit these, even though they're .py files: personal launchers hold API keys
+run_local.py
+run_local_*.py
+*_secret*.py
+
+# outputs (already excluded by the whitelist; listed so it's obvious)
+by_protein/
+by_protein_openalex/
+pdfs/
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
